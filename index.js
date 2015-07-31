@@ -13,10 +13,11 @@ function init({width, height}) {
 var times = require('lodash.times');
 var setPixel = require('./lib/set-pixel');
 var next = require('./lib/next')('seed');
-function draw({ctx}) {
+function draw({ctx, width, height, mousePosition}) {
+    ctx.clearRect(0, 0, width, height);
     var p = [100, 100];
-    times(10000, () => {
-        p = next(p, corners);
+    times(5000, () => {
+        p = next(p, mousePosition && [corners[0], corners[1], mousePosition] || corners);
         setPixel(ctx, p);
     });
 }
