@@ -6,7 +6,8 @@ function init({width, height}) {
     corners = [
         [width * 1 / 3, 10],
         [10, height - 10],
-        [width - 10, height * 2 / 3]
+        [width - 10, height * 2 / 3],
+        [width - 10, 10]
     ];
 }
 
